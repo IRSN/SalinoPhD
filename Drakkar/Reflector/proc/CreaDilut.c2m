@@ -363,7 +363,8 @@ REAL Cr50 := Cr50Z4f faZr4 * Cr50Inf faInc * Cr50SSf faSS * + + ;
 REAL Cr52 := Cr52Z4f faZr4 * Cr52Inf faInc * Cr52SSf faSS * + + ;
 REAL Cr53 := Cr53Z4f faZr4 * Cr53Inf faInc * Cr53SSf faSS * + + ;
 REAL Cr54 := Cr54Z4f faZr4 * Cr54Inf faInc * Cr54SSf faSS * + + ;
-REAL O16 := O16Z4f faZr4 * ;
+* Special case: Oxygen 16 may be present in both zircalloy and water (H2O).
+REAL O16 := O16Z4f faZr4 * faO + ;
 REAL Zr := ZrNatZ4f faZr4 * ;
 REAL Zr90 := Zr90Z4f faZr4 * ;
 REAL Zr91 := Zr91Z4f faZr4 * ;
@@ -468,7 +469,7 @@ LibDilut := LIB: ::
   MIX 1 <<TMil>>
     H2O      = <<NomH2O>>   <<faH2O>>
     H1_H2O   = <<NomH1>>    <<faH>>
-    O16      = <<NomO16>>   <<faO>>
+    O16      = <<NomO16>>   <<O16>>
     B10      = <<NomB10>>   <<B10>>
     B11      = <<NomB11>>   <<B11>>
     Fe54     = <<NomFe54>>  <<Fe54>>
@@ -517,7 +518,6 @@ LibDilut := LIB: ::
     Co59     = <<NomCo59>>  <<Co59>>
     Mn55     = <<NomMn55>>  <<Mn55>>
     Nb93     = <<NomNb93>>  <<Nb93>>
-    O16      = <<NomO16>>   <<O16>>
 ;
 
 END: ;
